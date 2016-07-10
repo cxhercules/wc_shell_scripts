@@ -1,0 +1,11 @@
+# -*-Shell-script-*-
+#
+# functions	This file contains functions to be used by most or all
+#		shell scripts in this dir
+#
+
+# Substitute for echo if not working with -n option
+echon() {
+	echo "$*" | tr -d '\n'
+}
+

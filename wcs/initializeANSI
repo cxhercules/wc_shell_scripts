@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# ANSI Color -- Use these variables to make output in different colors
+# and formats. Color names that end with 'f' are foreground (text) colors,
+# and those ending with 'b' are backgroun colors. 
+
+initializeANSI()
+{
+	esc="" # if this doesn't work, enter an ESC directly
+
+	blackf="${esc}[30m";   redf="${esc}[31m";   greenf="${esc}[32m"
+	yellowf="${esc}[33m";  bluef="${esc}[34m";  purplef="${esc}[35m"
+	cyanf="${esc}[36m";    whitef="${esc}[37m"
+
+
+	blackb="${esc}[30m";   redb="${esc}[31m";   greenb="${esc}[32m"
+	yellowb="${esc}[33m";  blueb="${esc}[34m";  purpleb="${esc}[35m"
+	cyanb="${esc}[36m";    whiteb="${esc}[37m"
+
+	boldon="${esc}[1m";    boldoff="${esc}[22m"
+	italicson="${esc}[3m"; italicsoff="${esc}[23m"
+	ulon="${esc}[4m";      uloff="${esc}[24m"
+	invon="${esc}[7m";     invoff="${esc}[27m"
+
+	reset="${esc}[0m"
+}
