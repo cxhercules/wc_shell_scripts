@@ -3,6 +3,12 @@
 ## Libary files to use on different scripts
 ##
 
+# -*-Shell-script-*-
+#
+# functions	This file contains functions to be used by most or all
+#		shell scripts in this dir
+#
+
 # inpath - Varifies that a specified program is either valid as is,
 #   or that it can be found in the PATH directory list. 
 
@@ -48,7 +54,6 @@ checkForCmdInPath()
    fi        
 }
 
-#!/bin/sh
 # validAlphaNum - Ensures that input consists only of alphabetical and numeric characters. 
 
 validAlphaNum()
@@ -65,7 +70,6 @@ validAlphaNum()
    fi
 }
 
-#!/bin/sh
 # normdate -- Normalizes month field in date specification
 # to three letters, first letter capitalization. A helper 
 # function for Script #7, valid-date. Exits w/ zero if no error. 
@@ -74,18 +78,17 @@ monthnoToName()
 {
    # Sets the variable  'month' to the appropriate value
 	case $1 in 
-		1 ) month="Jan"		;;	2 ) month="Feb"		;;
+	   1 ) month="Jan"		;; 2 ) month="Feb"		;;
 	   3 ) month="Mar"		;; 4 ) month="Apr"		;;
-		5 ) month="May"		;;	6 ) month="June"		;;
-		7 ) month="Jul"		;;	8 ) month="Aug"		;;
+	   5 ) month="May"		;; 6 ) month="June"		;;
+	   7 ) month="Jul"		;; 8 ) month="Aug"		;;
 	   9 ) month="Sep"		;; 10) month="Oct"		;;
 	   11) month="Nov"		;; 12) month="Dec"		;;
-		* ) echo "$0: Unknown numeric month value $1" >&2; exit 1
+	   * ) echo "$0: Unknown numeric month value $1" >&2; exit 1
 	esac
 	return 0
 }
 
-#!/bin/sh
 # nicenumber -- Given a number, shows it in comma-separated form.
 # Expects DD and TD to be instantiated. Instantiates nicenum
 # or, if a second arg is specified, the output is echoed to stdout. 
@@ -123,7 +126,6 @@ nicenumber()
 	fi
 }
 
-#!/bin/sh 
 # validint -- Validates integer input, allowing negative ints too.
 
 function validint
@@ -167,10 +169,6 @@ function validint
 	return 0
 }
 
-#if validint "$1" "$2" "$3" ; then
-#   echo "The input is a valid integer value within your constraints"
-#fi
-#!/bin/sh 
 
 # validfloat
 
@@ -178,7 +176,6 @@ function validint
 # need to split the value at the decimal point. We then test the first part
 # to see if it's a valid integer, then test the second part to see if it's a 
 # valid >=0 integer, so -30.5 is valid, but -30.-8 isn't. 
-
 
 validfloat()
 {
@@ -225,9 +222,7 @@ validfloat()
 	return 0
 }
 
-#!/bin/sh
 # valid-date -- Validates a date, taking into account leap year rules. 
-#set -vx
 
 exceedsDaysInMonth()
 {
@@ -276,12 +271,6 @@ isLeapYear()
 
 # Normalize date and split back out returned values
 
-# -*-Shell-script-*-
-#
-# functions	This file contains functions to be used by most or all
-#		shell scripts in this dir
-#
-
 # Substitute for echo if not working with -n option
 echon() {
 	echo "$*" | tr -d '\n'
@@ -315,8 +304,6 @@ initializeANSI()
 	reset="${esc}[0m"
 }
 
-
-#!/bin/sh
 
 # filelock - A flexible file locking mechanism
 
@@ -381,3 +368,4 @@ $*
 quit
 EOF
 }
+
