@@ -269,15 +269,12 @@ isLeapYear()
 	fi
 }
 
-# Normalize date and split back out returned values
 
 # Substitute for echo if not working with -n option
 echon() {
 	echo "$*" | tr -d '\n'
 }
 
-
-#!/bin/sh
 
 # ANSI Color -- Use these variables to make output in different colors
 # and formats. Color names that end with 'f' are foreground (text) colors,
